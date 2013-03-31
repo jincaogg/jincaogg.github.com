@@ -38,8 +38,72 @@
              <div class='span9'>
                 
                 <article>
+                 <small>2012-12-05 11:25</small>
+                <h1><a href="post/test2.htm">DB</a></h1>
+                <div><pre>
+                
+#AdGroupTable
+
+	
+	<?php
+	class AdGroupTable{
+		static $type_fields=array();
+		static $pb_fields=array();
+		static $ttc_keys=array();
+		static $ttc_addr='';
+		static $table='';
+		static $filter=array();
+		
+		prototel $data=array();
+		prototel $conn_obj=null;
+		
+		
+		function get($conts,$fields=true){
+			$keys=array();
+			$where=array();
+			
+			//获取已经设置的数据
+			//合并上$conts里直接等于的记录，如果是TTC获取，需要验证TTC的key是否全部就绪
+			
+			
+			
+			//$conts其他记录列入where中
+			
+			$where_keys=array();
+			
+			if($fields!=true){
+				if(is_string($fields)){
+					$fields_arr=explode(',',$fields);
+					$fields_arr=array_merger($fields_arr,array_keys($where_keys));					$this->filter=$fields_arr;
+					
+				}
+			}
+			
+			$ret=$this->conn_obj->get($keys,$fields,$where);
+			if(isset($ret[1])){
+				//记录过多
+			}elseif(isset($ret[0])){
+				$this->load($ret[0]);
+			}else{
+				//没有记录
+			}
+			
+			
+		}
+		
+		function select($conts,$fields=true){
+			
+		
+		}
+		
+		
+</pre>
+                </div>
+                </article>
+                
+                <article>
                  <small>2012-11-28 11:25</small>
-                <h1><a href="post/2012-11-29_12.htm">PB for PHP</a></h1>
+                <h1><a href="post/pb4php.htm">PB for PHP</a></h1>
                 <div><pre>
                 
 #Protobuf 在PHP里应用备忘
@@ -101,72 +165,7 @@ Title:jccc
                 
                 <article>
                  <small>2012-12-05 11:25</small>
-                <h1><a href="post/2012-12-05_test2.htm">DB</a></h1>
-                <div><pre>
-                
-#AdGroupTable
-
-Func
-	
-	<?php
-	class AdGroupTable{
-		static $type_fields=array();
-		static $pb_fields=array();
-		static $ttc_keys=array();
-		static $ttc_addr='';
-		static $table='';
-		static $filter=array();
-		
-		prototel $data=array();
-		prototel $conn_obj=null;
-		
-		
-		function get($conts,$fields=true){
-			$keys=array();
-			$where=array();
-			
-			//获取已经设置的数据
-			//合并上$conts里直接等于的记录，如果是TTC获取，需要验证TTC的key是否全部就绪
-			
-			
-			
-			//$conts其他记录列入where中
-			
-			$where_keys=array();
-			
-			if($fields!=true){
-				if(is_string($fields)){
-					$fields_arr=explode(',',$fields);
-					$fields_arr=array_merger($fields_arr,array_keys($where_keys));					$this->filter=$fields_arr;
-					
-				}
-			}
-			
-			$ret=$this->conn_obj->get($keys,$fields,$where);
-			if(isset($ret[1])){
-				//记录过多
-			}elseif(isset($ret[0])){
-				$this->load($ret[0]);
-			}else{
-				//没有记录
-			}
-			
-			
-		}
-		
-		function select($conts,$fields=true){
-			
-		
-		}
-		
-		
-</pre>
-                </div>
-                </article>
-                
-                <article>
-                 <small>2012-12-05 11:25</small>
-                <h1><a href="post/test/2012-12-05_test2.htm">DB</a></h1>
+                <h1><a href="post/test/test3.htm">DB</a></h1>
                 <div><pre>
                 
 #AdGroupTable
@@ -253,11 +252,11 @@ Func
                     <h3>Top </h3>
                     <ol class='posts'>
                         
-                            <li><a href="post/2012-11-29_12.htm">PB for PHP</a></li>
+                            <li><a href="post/test2.htm">DB</a></li>
                         
-                            <li><a href="post/2012-12-05_test2.htm">DB</a></li>
+                            <li><a href="post/pb4php.htm">PB for PHP</a></li>
                         
-                            <li><a href="post/test/2012-12-05_test2.htm">DB</a></li>
+                            <li><a href="post/test/test3.htm">DB</a></li>
                         
                     </ol>
                 </section>
