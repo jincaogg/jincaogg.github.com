@@ -58,8 +58,9 @@
               <aside class='span3 aside'>
         <div class=''>
                 <section >  
-                    <form class='well form-search'>
-                        <input type='text' class='input-medium search-query'>
+                    <form class='well form-search' method="get" action="http://www.google.cn/search">
+                        <input type="hidden" name="domains" value="jincaogg.github.com">
+                        <input type='text' name='q' class='input-medium search-query'>
                         <button type='submit' class='btn'>Search</button>
                     </form>
                 </section>
