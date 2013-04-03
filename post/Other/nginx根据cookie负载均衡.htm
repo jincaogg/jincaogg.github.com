@@ -133,7 +133,7 @@ window.onload = function () {
         $(".toc").append("<ol id='toc'></ul>");
         var TOC = $("ol#toc");
         
-        $.each($('article h2'), function(k, v) {
+        $.each($('#content h2'), function(k, v) {
           var heading = $(v); // get the heading
           var headingText = $(v).text(); // get the value of the heading
           // make a URI-friendly id for the heading
