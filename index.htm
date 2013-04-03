@@ -49,9 +49,7 @@ footer{
                 <div><pre>
                 
 
-##背景
-
-
+###背景
 
 以前的Blog采用了WordPress放到虚拟主机上，很久时间没管，记起了上去才发现服务器都关了，数据全都没有备份。
 
@@ -63,20 +61,11 @@ footer{
 
 你现在所看到这个就是通过这个脚本生成的了。
 
-##特点
+###特点
  
-
  1. 采用基于showdown.js用来解析Markdown，
-
  2. 采用了Disqus作为评论系统，
-
- 3. 采用了bootstrap做为页面的CSS框架并采用其中的主题
-
- 4. 只使用python的基础库，没有依赖其他库，只要有Python环境就能运行
- 
- 
-
-</pre>
+ 3. 采用了bootstrap做为页面</pre>
                 </div>
                 </article>
                 
@@ -110,18 +99,7 @@ nginx可以根据url path进行分流，也可以根据cookie分流
 		upstream root {  server 192.168.1.0:8080 weight=1 max_fails=1 fail_timeout=30s; }   
 		server {listen 8080;
 				server_name  neoremind.net;    
-				log_format main '$remote_addr - $remote_user [$time_local] "$request" ' '$status $body_bytes_sent "$http_referer" "group=$group"' '"$http_user_agent" $gzip_ratio $request_time "$http_x_forwarded_for"';    
-				access_log  logs/access_log main;  error_log   logs/error_log;    
-				location / { proxy_pass http://$group;   proxy_set_header X-Forwarded-For $remote_addr; }  
-		}
-
- 
-- 方案2：
-
-  利用set和if…else… ，nginx.conf配置如下：
-
-		upstream apache001 { server 192.168.1.1:8080 weight=1 max_fails=1 fail_timeout=30s; }   
-		upstream apache002 { server 192.168.1.2:8080 weight=1 max_fails=1</pre>
+				log_format main '$remote_addr - $remote_user [$time_local] "$request" ' '$status $body_bytes_sent "$http_refe</pre>
                 </div>
                 </article>
                 
@@ -160,18 +138,7 @@ nginx可以根据url path进行分流，也可以根据cookie分流
          var_dump($person->name());
          $person = $book->person(1);
          var_dump($person->name());        
-         //-------------------    
-         $book = new AddressBook();
-         $person = $book->add_person();
-         $person->set_name('Nikolai');
-         $person = $book->add_person();
-         $person->set_name('Kordulla');
-         $person->set_surname('MySurname');
-         $phone_number = $person->add_phone();
-         $phone_number->set_number('0711');
-         $phone_number->set_type(Person_PhoneType::WORK);
-         $phone_number = $person->add_phone();
-         $phone_number->set_number('017</pre>
+         </pre>
                 </div>
                 </article>
                 
