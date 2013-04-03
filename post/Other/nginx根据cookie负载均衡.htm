@@ -111,6 +111,16 @@ nginx可以根据url path进行分流，也可以根据cookie分流
     margin:0 30px 0 -30px;
     padding-top: 30px;
 }
+.toc{
+    position: fixed; 
+    display: block;
+    top: 90px; 
+    border: 1px solid rgb(204, 204, 204);
+    padding: 12px; 
+    width: 190px;
+    background-color: rgb(255, 255, 238); 
+    right: 140px;
+}
 
 </style>
 <script src="/res/js/jquery-1.8.0.min.js"></script>
@@ -145,7 +155,7 @@ window.onload = function () {
           TOC.append("<li><a href=\"#" + headingID +"\">" + headingText + "</a></li>" );
         });
         // Put a title on the table of contents
-        $(".toc").prepend("<h2>目录</h2>");
+        $(".toc").prepend("<h3>目录</h3>");
         //$('body').data('spy', 'scroll').data('target', '#toc');
       }
 
