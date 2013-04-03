@@ -44,6 +44,71 @@ footer{
              <div class='span9'>
                 
                 <article>
+                 <small>2013-03-31 11:30</small>
+                <h1><a href="post/Other/hello_world.htm">Hello World</a></h1>
+                <div><pre>
+                
+
+简单用Python写了从MarkDown生成静态Blog的脚本，放在GitHub上了，如你所看到这个就是通过这个脚本生成的了。
+
+
+总共不到280行代码。实现了一个极其简陋的模板
+
+1,采用基于showdown.js用来解析Markdown，
+
+2,采用了Disqus作为评论系统，
+
+3,采用了bootstrap做为页面的CSS框架并采用其中的主题
+</pre>
+                </div>
+                </article>
+                
+                <article>
+                 <small>2012-12-17 11:25</small>
+                <h1><a href="post/Other/nginx根据cookie负载均衡.htm">nginx根据cookie负载均衡</a></h1>
+                <div><pre>
+                
+
+
+nginx可以根据url path进行分流，也可以根据cookie分流
+ 
+两台服务器分别定义为
+
+	apache001：192.168.1.1:8080
+	apache002：192.168.1.2:8080
+ 
+默认服务器为：
+
+	default：192.168.1.0:8080
+ 
+前端nginx服务器监听端口8080，需要根据cookie转发，查询的cookie的键（key）为uid，如果该cookie值（value）以1结尾则转发到apache001，以2结尾则转发到apache002。
+ 
+- 方案1：
+
+   用map，nginx.conf配置如下：
+ 
+		map $COOKIE_uid $group { ~*1$ apache001;  ~*2$ apache002;  default root; }   
+		upstream apache001 { server 192.168.1.1:8080 weight=1 max_fails=1 fail_timeout=30s; }   
+		upstream apache002 { server 192.168.1.2:8080 weight=1 max_fails=1 fail_timeout=30s; }   
+		upstream root {  server 192.168.1.0:8080 weight=1 max_fails=1 fail_timeout=30s; }   
+		server {listen 8080;
+				server_name  neoremind.net;    
+				log_format main '$remote_addr - $remote_user [$time_local] "$request" ' '$status $body_bytes_sent "$http_referer" "group=$group"' '"$http_user_agent" $gzip_ratio $request_time "$http_x_forwarded_for"';    
+				access_log  logs/access_log main;  error_log   logs/error_log;    
+				location / { proxy_pass http://$group;   proxy_set_header X-Forwarded-For $remote_addr; }  
+		}
+
+ 
+- 方案2：
+
+  利用set和if…else… ，nginx.conf配置如下：
+
+		upstream apache001 { server 192.168.1.1:8080 weight=1 max_fails=1 fail_timeout=30s; }   
+		upstream apache002 { server 192.168.1.2:8080 weight=1 max_fails=1</pre>
+                </div>
+                </article>
+                
+                <article>
                  <small>2012-11-28 11:25</small>
                 <h1><a href="post/PHP/pb4php.htm">Protobuf在PHP里应用备忘</a></h1>
                 <div><pre>
@@ -93,66 +158,6 @@ footer{
                 </div>
                 </article>
                 
-                <article>
-                 <small>2013-03-31 11:30</small>
-                <h1><a href="post/Other/hello_world.htm">Hello World</a></h1>
-                <div><pre>
-                
-
-简单用Python写了从MarkDown生成静态Blog的脚本，放在GitHub上了，如你所看到这个了。
-
-还没有加评论的部分，先看看JS版的MarkDown效果如何先。
-
-</pre>
-                </div>
-                </article>
-                
-                <article>
-                 <small>2012-12-17 11:25</small>
-                <h1><a href="post/Other/nginx根据cookie负载均衡.htm">nginx根据cookie负载均衡</a></h1>
-                <div><pre>
-                
-#nginx根据cookie负载均衡
-
-
-nginx可以根据url path进行分流，也可以根据cookie分流
- 
-两台服务器分别定义为
-
-	apache001：192.168.1.1:8080
-	apache002：192.168.1.2:8080
- 
-默认服务器为：
-
-	default：192.168.1.0:8080
- 
-前端nginx服务器监听端口8080，需要根据cookie转发，查询的cookie的键（key）为uid，如果该cookie值（value）以1结尾则转发到apache001，以2结尾则转发到apache002。
- 
-- 方案1：
-
-   用map，nginx.conf配置如下：
- 
-		map $COOKIE_uid $group { ~*1$ apache001;  ~*2$ apache002;  default root; }   
-		upstream apache001 { server 192.168.1.1:8080 weight=1 max_fails=1 fail_timeout=30s; }   
-		upstream apache002 { server 192.168.1.2:8080 weight=1 max_fails=1 fail_timeout=30s; }   
-		upstream root {  server 192.168.1.0:8080 weight=1 max_fails=1 fail_timeout=30s; }   
-		server {listen 8080;
-				server_name  neoremind.net;    
-				log_format main '$remote_addr - $remote_user [$time_local] "$request" ' '$status $body_bytes_sent "$http_referer" "group=$group"' '"$http_user_agent" $gzip_ratio $request_time "$http_x_forwarded_for"';    
-				access_log  logs/access_log main;  error_log   logs/error_log;    
-				location / { proxy_pass http://$group;   proxy_set_header X-Forwarded-For $remote_addr; }  
-		}
-
- 
-- 方案2：
-
-  利用set和if…else… ，nginx.conf配置如下：
-
-		upstream apache001 { server 192.168.1.1:8080 weight=1 max_fails=1 fail_timeout=30s; }   
-		upstream apache002 { server 192.16</pre>
-                </div>
-                </article>
-                
              </div>
              <aside class='span3 aside'>
         <div class=''>
@@ -177,11 +182,11 @@ nginx可以根据url path进行分流，也可以根据cookie分流
                     <h3>Top </h3>
                     <ol class='posts'>
                         
-                            <li><a href="post/PHP/pb4php.htm">Protobuf在PHP里应用备忘</a></li>
-                        
                             <li><a href="post/Other/hello_world.htm">Hello World</a></li>
                         
                             <li><a href="post/Other/nginx根据cookie负载均衡.htm">nginx根据cookie负载均衡</a></li>
+                        
+                            <li><a href="post/PHP/pb4php.htm">Protobuf在PHP里应用备忘</a></li>
                         
                     </ol>
                 </section>
