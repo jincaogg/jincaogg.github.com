@@ -44,40 +44,10 @@ footer{
              <div class='span9'>
                 
                 <article>
-                 <small>2013-03-31 11:30</small>
-                <h1><a href="post/Other/github_markdown.htm">用github+markdown搭建极简博客</a></h1>
-                <div><pre>
-                
-
-###背景
-
-以前的Blog采用了WordPress放到虚拟主机上，很久时间没管，记起了上去才发现服务器都关了，数据全都没有备份。
-
-后续接触了MarkDown，非常喜欢这种简洁易表达的文本输写格式，遂采用 `scriptogr.am` 的服务搭建了一个blog，然后一下就喜欢上了这种直接用文本编辑器写Blog，放到本地目录的方式。
-
-但发现 sciptogr.am 的功能定制化不够。其后一直在找一种比较简单并更加可控的静态Blog的搭建方式，其间找到jekyll等静态生成器，但安装和使用都太复杂，常常依赖一大堆的库。
-
-于是就自己用Python简单写了从MarkDown生成静态Blog的脚本，总共不到270行代码。其中还包含实现了一个简单到简陋的模板，
-
-你现在所看到这个就是通过这个脚本生成的了。
-
-###特点
- 
- 1. 采用基于showdown.js用来解析Markdown，
- 
- 2. 采用了Disqus作为评论系统，
- 
- 3. 采用了bootstrap做为�</pre>
-                </div>
-                </article>
-                
-                <article>
                  <small>2012-12-17 11:25</small>
                 <h1><a href="post/Other/nginx根据cookie负载均衡.htm">nginx根据cookie负载均衡</a></h1>
                 <div><pre>
                 
-
-
 nginx可以根据url path进行分流，也可以根据cookie分流
  
 两台服务器分别定义为
@@ -101,7 +71,34 @@ nginx可以根据url path进行分流，也可以根据cookie分流
 		upstream root {  server 192.168.1.0:8080 weight=1 max_fails=1 fail_timeout=30s; }   
 		server {listen 8080;
 				server_name  neoremind.net;    
-				log_format main '$remote_addr - $remote_user [$time_local] "$request" ' '$status $body_bytes_sent "$http_refe</pre>
+				log_format main '$remote_addr - $remote_user [$time_local] "$request" ' '$status $body_bytes_sent "$http_refere</pre>
+                </div>
+                </article>
+                
+                <article>
+                 <small>2013-03-31 11:30</small>
+                <h1><a href="post/Other/github_markdown.htm">用github+markdown搭建极简博客</a></h1>
+                <div><pre>
+                
+###背景
+
+以前的Blog采用了WordPress放到虚拟主机上，很久时间没管，记起了上去才发现服务器都关了，数据全都没有备份。
+
+后续接触了MarkDown，非常喜欢这种简洁易表达的文本输写格式，遂采用 `scriptogr.am` 的服务搭建了一个blog，然后一下就喜欢上了这种直接用文本编辑器写Blog，放到本地目录的方式。
+
+但发现 sciptogr.am 的功能定制化不够。其后一直在找一种比较简单并更加可控的静态Blog的搭建方式，其间找到jekyll等静态生成器，但安装和使用都太复杂，常常依赖一大堆的库。
+
+于是就自己用Python简单写了从MarkDown生成静态Blog的脚本，总共不到270行代码。其中还包含实现了一个简单到简陋的模板，
+
+你现在所看到这个就是通过这个脚本生成的了。
+
+###特点
+ 
+ 1. 采用基于showdown.js用来解析Markdown，
+ 
+ 2. 采用了Disqus作为评论系统，
+ 
+ 3. 采用了bootstrap做为页</pre>
                 </div>
                 </article>
                 
@@ -168,9 +165,9 @@ nginx可以根据url path进行分流，也可以根据cookie分流
                     <h3>Top </h3>
                     <ol class='posts'>
                         
-                            <li><a href="post/Other/github_markdown.htm">用github+markdown搭建极简博客</a></li>
-                        
                             <li><a href="post/Other/nginx根据cookie负载均衡.htm">nginx根据cookie负载均衡</a></li>
+                        
+                            <li><a href="post/Other/github_markdown.htm">用github+markdown搭建极简博客</a></li>
                         
                             <li><a href="post/PHP/pb4php.htm">Protobuf在PHP里应用备忘</a></li>
                         
