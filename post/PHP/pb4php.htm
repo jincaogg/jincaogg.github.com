@@ -43,6 +43,9 @@ footer{
         <h2>PB for PHP</h2>
         <small>2012-11-28 11:25</small>
         <hr/>
+        <div class="span2 toc-container">
+         <div data-spy="affix" data-offset-top="185" style="width:140px;" class="toc"></div>
+        </div>
     </div>
   </div>
 </div>
@@ -124,8 +127,30 @@ Title:jccc
             dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
+
+
+window.onload = function () {
+        // Looks for an element with the class "toc" and appends an empty list
+        $(".toc").append("<ol id='toc'></ul>");
+        var TOC = $("ol#toc");
+        
+        $.each($('article h2'), function(k, v) {
+          var heading = $(v); // get the heading
+          var headingText = $(v).text(); // get the value of the heading
+          // make a URI-friendly id for the heading
+          var headingID = encodeURIComponent(headingText);
+          $(v).attr("id", headingID); //assign the new id
+          // change the heading text to include a number for prettier headings
+          heading.text((k+1) +". " + headingText);
+          // create a link in the list for the heading
+          TOC.append("<li><a href=\"#" + headingID +"\">" + headingText + "</a></li>" );
+        });
+        // Put a title on the table of contents
+        $(".toc").prepend("<h2>目录</h2>");
+        //$('body').data('spy', 'scroll').data('target', '#toc');
+      }
+
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>    
 </div>
 <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
