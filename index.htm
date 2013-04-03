@@ -44,31 +44,16 @@ footer{
              <div class='span9'>
                 
                 <article>
-                 <small>2013-03-31 11:30</small>
-                <h1><a href="post/Other/hello_world.htm">Hello World</a></h1>
-                <div><pre>
-                
-
-简单用Python写了从MarkDown生成静态Blog的脚本，放在GitHub上了，如你所看到这个了。
-
-还没有加评论的部分，先看看JS版的MarkDown效果如何先。
-
-</pre>
-                </div>
-                </article>
-                
-                <article>
                  <small>2012-11-28 11:25</small>
-                <h1><a href="post/PHP/pb4php.htm">PB for PHP</a></h1>
+                <h1><a href="post/PHP/pb4php.htm">Protobuf在PHP里应用备忘</a></h1>
                 <div><pre>
                 
-#Protobuf 在PHP里应用备忘
-Title:jccc
 
 ##引用包Protocolbuf
   
   1. 下载包[pb4php](http://code.google.com/p/pb4php/)
-  2. 根据proto文件生成PHP的代码文件`test.proto`>`pb_proto_test.php` 
+  
+  2. 根据proto文件生成PHP的代码文件 `test.proto` > `pb_proto_test.php` 
                      
          <?php
          require_once('../parser/pb_parser.php');
@@ -104,7 +89,21 @@ Title:jccc
          $phone_number->set_number('0711');
          $phone_number->set_type(Person_PhoneType::WORK);
          $phone_number = $person->add_phone();
-  </pre>
+         $phone_number->set_number('017</pre>
+                </div>
+                </article>
+                
+                <article>
+                 <small>2013-03-31 11:30</small>
+                <h1><a href="post/Other/hello_world.htm">Hello World</a></h1>
+                <div><pre>
+                
+
+简单用Python写了从MarkDown生成静态Blog的脚本，放在GitHub上了，如你所看到这个了。
+
+还没有加评论的部分，先看看JS版的MarkDown效果如何先。
+
+</pre>
                 </div>
                 </article>
                 
@@ -178,9 +177,9 @@ nginx可以根据url path进行分流，也可以根据cookie分流
                     <h3>Top </h3>
                     <ol class='posts'>
                         
-                            <li><a href="post/Other/hello_world.htm">Hello World</a></li>
+                            <li><a href="post/PHP/pb4php.htm">Protobuf在PHP里应用备忘</a></li>
                         
-                            <li><a href="post/PHP/pb4php.htm">PB for PHP</a></li>
+                            <li><a href="post/Other/hello_world.htm">Hello World</a></li>
                         
                             <li><a href="post/Other/nginx根据cookie负载均衡.htm">nginx根据cookie负载均衡</a></li>
                         

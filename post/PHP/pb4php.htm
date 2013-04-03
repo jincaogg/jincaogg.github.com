@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html dir="ltr" lang="zh-CN">
 <head>
-<title>PB for PHP</title>
+<title>Protobuf在PHP里应用备忘</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="description" content="">
@@ -40,7 +40,7 @@ footer{
 <div class='container'>
   <div class='row'>
     <div class='span12'>
-        <h2>PB for PHP</h2>
+        <h2>Protobuf在PHP里应用备忘</h2>
         <small>2012-11-28 11:25</small>
         <hr/>
         <div class="span2 toc-container">
@@ -51,13 +51,12 @@ footer{
 </div>
 <xmp theme="united" style="display:none;">
 
-#Protobuf 在PHP里应用备忘
-Title:jccc
 
 ##引用包Protocolbuf
   
   1. 下载包[pb4php](http://code.google.com/p/pb4php/)
-  2. 根据proto文件生成PHP的代码文件`test.proto`>`pb_proto_test.php` 
+  
+  2. 根据proto文件生成PHP的代码文件 `test.proto` > `pb_proto_test.php` 
                      
          <?php
          require_once('../parser/pb_parser.php');
@@ -160,7 +159,6 @@ window.onload = function () {
         });
         // Put a title on the table of contents
         $(".toc").prepend("<h3>目录</h3>");
-        //$('body').data('spy', 'scroll').data('target', '#toc');
       }
 
 </script>
