@@ -17,6 +17,12 @@
 footer{
     border-top: 1px solid #802C59; margin-bottom: -30px; padding-top: 10px;
 }
+.md_div{
+    border: 1px solid #E3E3E3;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    padding: 15px;
+}
 </style>
 </head>
 
@@ -52,7 +58,7 @@ footer{
                 <article>
                  <small>2013-03-31 11:30</small>
                 <h1><a href="post/Other/github_markdown.htm">用github+markdown搭建极简博客</a></h1>
-                <div><pre class='md_body'>
+                <div class='md_div'><pre class='md_body'>
                 
 ###背景
 
@@ -79,7 +85,7 @@ footer{
                 <article>
                  <small>2012-12-17 11:25</small>
                 <h1><a href="post/Other/nginx根据cookie负载均衡.htm">nginx根据cookie负载均衡</a></h1>
-                <div><pre class='md_body'>
+                <div class='md_div'><pre class='md_body'>
                 
 nginx可以根据url path进行分流，也可以根据cookie分流
  
@@ -111,7 +117,7 @@ nginx可以根据url path进行分流，也可以根据cookie分流
                 <article>
                  <small>2012-11-28 11:25</small>
                 <h1><a href="post/PHP/pb4php.htm">Protobuf在PHP里应用备忘</a></h1>
-                <div><pre class='md_body'>
+                <div class='md_div'><pre class='md_body'>
                 
 
 ##引用包Protocolbuf
@@ -207,9 +213,7 @@ marked.setOptions({
 $.each($('article .md_body'), function(k, v) {
     var obj=$(v);
     var md_body_str=$(v).text();
-    
     var html=marked.parser(marked.lexer(md_body_str));
-
     obj.closest('div').html(html);
     
 });
