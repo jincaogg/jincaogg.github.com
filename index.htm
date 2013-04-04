@@ -62,6 +62,52 @@ footer{
              <div class='span9'>
                 
                 <article>
+                 <small>2013-04-05 12:03</small>
+                <h1><a href="post/Other/用Table解决iframe自适应高度.htm">用Table解决iframe自适应高度</a></h1>
+                <div class='md_div'><xmp class='uneditable md_body' style='display:block'>
+                
+主页面代码：
+
+	<!DOCTYPE html>
+	<html> 
+	<head> 
+	<title>iframe自适应</title> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<style type="text/css">   
+	html,body{ width:100%; height:100%;overflow:hidden}   
+	body {    
+        margin: 0;   
+      	padding:0;
+	}   
+	</style> 
+	</head> 
+	<body> 
+	<!--table设置高度为100%，宽度为100%--> 
+	<table border="0" style="width:100%; height:100%;" cellspacing="0" 	cellpadding="0"> 
+    <tr> 
+        <td style="width:100%; height:100%;"> 
+            <!--iframe高度设置为100％，宽度设置为100％--> 
+            <iframe src="test.html"  style="width:100%; height:100%;overflow-x:hidden" frameborder="no" scrolling="scroll"></iframe> 
+        </td> 
+   	 </tr> 
+	</table> 
+	</body> 
+	</html> 
+
+
+内页test.html代码：
+
+	<!DOCTYPE html>
+    <html> 
+    <head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+    <title>测试页面</title> 
+    <style>
+        html,body{ma</xmp>
+                </div>
+                </article>
+                
+                <article>
                  <small>2013-03-31 11:30</small>
                 <h1><a href="post/Other/github_markdown.htm">用github+markdown搭建极简博客</a></h1>
                 <div class='md_div'><xmp class='uneditable md_body' style='display:block'>
@@ -120,44 +166,6 @@ nginx可以根据url path进行分流，也可以根据cookie分流
                 </div>
                 </article>
                 
-                <article>
-                 <small>2012-11-28 11:25</small>
-                <h1><a href="post/PHP/pb4php.htm">Protobuf在PHP里应用备忘</a></h1>
-                <div class='md_div'><xmp class='uneditable md_body' style='display:block'>
-                
-##引用包Protocolbuf
-  
-  1. 下载包[pb4php](http://code.google.com/p/pb4php/)
-  
-  2. 根据proto文件生成PHP的代码文件 `test.proto` > `pb_proto_test.php` 
-                     
-         <?php
-         require_once('../parser/pb_parser.php');
-         $test = new PBParser();
-         $test->parse('./test.proto');
-         //---
-         
- 
-  3. 引用刚生成的代码文件，解析，存储PB格式数据
-         
-         <?php         
-         require_once('../message/pb_message.php');
-         // now read it with the old file
-         // include the generated file
-         require_once('./pb_proto_test.php');    
-         $string = file_get_contents('./test.pb');
-         // Just read it
-         $book = new AddressBook();
-         $book->parseFromString($string);
-         var_dump($book->person_size());
-         $person = $book->person(0);
-         var_dump($person->name());
-         $person = $book->person(1);
-         var_dump($person->name());        
-         </xmp>
-                </div>
-                </article>
-                
              </div>
             <div class='span3'>
 <aside class='aside'>
@@ -184,7 +192,7 @@ nginx可以根据url path进行分流，也可以根据cookie分流
                     <h3>Cats</h3>
                     <ol class='posts'>
                     
-                      <li><a href="/cat/Other.htm">Other [2]</a></li>
+                      <li><a href="/cat/Other.htm">Other [3]</a></li>
                     
                       <li><a href="/cat/PHP.htm">PHP [1]</a></li>
                     
@@ -196,6 +204,8 @@ nginx可以根据url path进行分流，也可以根据cookie分流
                 <section>
                     <h3>New </h3>
                     <ol class='posts'>
+                        
+                            <li><a href="post/Other/用Table解决iframe自适应高度.htm">用Table解决iframe自适应高度</a></li>
                         
                             <li><a href="post/Other/github_markdown.htm">用github+markdown搭建极简博客</a></li>
                         
