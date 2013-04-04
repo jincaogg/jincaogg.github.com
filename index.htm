@@ -59,7 +59,7 @@ footer{
                 <article>
                  <small>2013-03-31 11:30</small>
                 <h1><a href="post/Other/github_markdown.htm">用github+markdown搭建极简博客</a></h1>
-                <div class='md_div'><pre class='md_body'>
+                <div class='md_div'><xmp class='md_body'>
                 
 ###背景
 
@@ -79,14 +79,14 @@ footer{
  
  2. 采用了Disqus作为评论系统，
  
- 3. 采用了bootstrap做为页</pre>
+ 3. 采用了bootstrap做为页</xmp>
                 </div>
                 </article>
                 
                 <article>
                  <small>2012-12-17 11:25</small>
                 <h1><a href="post/Other/nginx根据cookie负载均衡.htm">nginx根据cookie负载均衡</a></h1>
-                <div class='md_div'><pre class='md_body'>
+                <div class='md_div'><xmp class='md_body'>
                 
 nginx可以根据url path进行分流，也可以根据cookie分流
  
@@ -111,14 +111,14 @@ nginx可以根据url path进行分流，也可以根据cookie分流
 		upstream root {  server 192.168.1.0:8080 weight=1 max_fails=1 fail_timeout=30s; }   
 		server {listen 8080;
 				server_name  neoremind.net;    
-				log_format main '$remote_addr - $remote_user [$time_local] "$request" ' '$status $body_bytes_sent "$http_refere</pre>
+				log_format main '$remote_addr - $remote_user [$time_local] "$request" ' '$status $body_bytes_sent "$http_refere</xmp>
                 </div>
                 </article>
                 
                 <article>
                  <small>2012-11-28 11:25</small>
                 <h1><a href="post/PHP/pb4php.htm">Protobuf在PHP里应用备忘</a></h1>
-                <div class='md_div'><pre class='md_body'>
+                <div class='md_div'><xmp class='md_body'>
                 
 
 ##引用包Protocolbuf
@@ -150,7 +150,7 @@ nginx可以根据url path进行分流，也可以根据cookie分流
          var_dump($person->name());
          $person = $book->person(1);
          var_dump($person->name());        
-         </pre>
+         </xmp>
                 </div>
                 </article>
                 
@@ -216,9 +216,7 @@ $.each($('article .md_body'), function(k, v) {
     var md_body_str=$(v).text();
     var html=marked.parser(marked.lexer(md_body_str));
     obj.closest('div').html(html);
-    
 });
-
 </script>
 
 <script src="/res/strapdown.js"></script>
