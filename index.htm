@@ -62,72 +62,29 @@ footer{
              <div class='span9'>
                 
                 <article>
-                 <small>2012-11-28 11:25</small>
-                <h1><a href="post/PHP/pb4php.htm">Protobuf在PHP里应用备忘</a></h1>
+                 <small>2013-03-31 11:30</small>
+                <h1><a href="post/Other/github_markdown.htm">用github+markdown搭建极简博客</a></h1>
                 <div class='md_div'><xmp class='uneditable md_body' style='display:block'>
                 
-##引用包Protocolbuf
-  
-  1. 下载包[pb4php](http://code.google.com/p/pb4php/)
-  
-  2. 根据proto文件生成PHP的代码文件 `test.proto` > `pb_proto_test.php` 
-                     
-         <?php
-         require_once('../parser/pb_parser.php');
-         $test = new PBParser();
-         $test->parse('./test.proto');
-         //---
-         
- 
-  3. 引用刚生成的代码文件，解析，存储PB格式数据
-         
-         <?php         
-         require_once('../message/pb_message.php');
-         // now read it with the old file
-         // include the generated file
-         require_once('./pb_proto_test.php');    
-         $string = file_get_contents('./test.pb');
-         // Just read it
-         $book = new AddressBook();
-         $book->parseFromString($string);
-         var_dump($book->person_size());
-         $person = $book->person(0);
-         var_dump($person->name());
-         $person = $book->person(1);
-         var_dump($person->name());        
-         </xmp>
-                </div>
-                </article>
-                
-                <article>
-                 <small>2012-12-17 11:25</small>
-                <h1><a href="post/Other/nginx根据cookie负载均衡.htm">nginx根据cookie负载均衡</a></h1>
-                <div class='md_div'><xmp class='uneditable md_body' style='display:block'>
-                
-nginx可以根据url path进行分流，也可以根据cookie分流
- 
-两台服务器分别定义为
+###背景
 
-	apache001：192.168.1.1:8080
-	apache002：192.168.1.2:8080
- 
-默认服务器为：
+以前的Blog采用了WordPress放到虚拟主机上，很久时间没管，记起了上去才发现服务器都关了，数据全都没有备份。
 
-	default：192.168.1.0:8080
- 
-前端nginx服务器监听端口8080，需要根据cookie转发，查询的cookie的键（key）为uid，如果该cookie值（value）以1结尾则转发到apache001，以2结尾则转发到apache002。
- 
-- 方案1：
+后续接触了MarkDown，非常喜欢这种简洁易表达的文本输写格式，遂采用 `scriptogr.am` 的服务搭建了一个blog，然后一下就喜欢上了这种直接用文本编辑器写Blog，放到本地目录的方式。
 
-   用map，nginx.conf配置如下：
+但发现 sciptogr.am 的功能定制化不够。其后一直在找一种比较简单并更加可控的静态Blog的搭建方式，其间找到jekyll等静态生成器，但安装和使用都太复杂，常常依赖一大堆的库。
+
+于是就自己用Python简单写了从MarkDown生成静态Blog的脚本，总共不到290行代码。其中还包含实现了一个简单到简陋的模板，
+
+你现在所看到这个就是通过这个脚本生成的了。
+
+###特点
  
-		map $COOKIE_uid $group { ~*1$ apache001;  ~*2$ apache002;  default root; }   
-		upstream apache001 { server 192.168.1.1:8080 weight=1 max_fails=1 fail_timeout=30s; }   
-		upstream apache002 { server 192.168.1.2:8080 weight=1 max_fails=1 fail_timeout=30s; }   
-		upstream root {  server 192.168.1.0:8080 weight=1 max_fails=1 fail_timeout=30s; }   
-		server {listen 8080;
-				server_name  neoremind.net;    
-				log_format main '$remote_addr - $remote_user [$time_local] "$request" ' '$status $body_bytes_sent "$http_refere</xmp>
+ 1. 采用基于showdown.js用来解析Markdown，
+ 
+ 2. 采用了Disqus作为评论系统，
+ 
+ 3. 采用了bootstrap做为页</xmp>
                 </div>
                 </article>
                 
@@ -174,6 +131,44 @@ nginx可以根据url path进行分流，也可以根据cookie分流
     <title>测试页面</title> 
     <style>
         html,body{ma</xmp>
+                </div>
+                </article>
+                
+                <article>
+                 <small>2012-11-28 11:25</small>
+                <h1><a href="post/PHP/pb4php.htm">Protobuf在PHP里应用备忘</a></h1>
+                <div class='md_div'><xmp class='uneditable md_body' style='display:block'>
+                
+##引用包Protocolbuf
+  
+  1. 下载包[pb4php](http://code.google.com/p/pb4php/)
+  
+  2. 根据proto文件生成PHP的代码文件 `test.proto` > `pb_proto_test.php` 
+                     
+         <?php
+         require_once('../parser/pb_parser.php');
+         $test = new PBParser();
+         $test->parse('./test.proto');
+         //---
+         
+ 
+  3. 引用刚生成的代码文件，解析，存储PB格式数据
+         
+         <?php         
+         require_once('../message/pb_message.php');
+         // now read it with the old file
+         // include the generated file
+         require_once('./pb_proto_test.php');    
+         $string = file_get_contents('./test.pb');
+         // Just read it
+         $book = new AddressBook();
+         $book->parseFromString($string);
+         var_dump($book->person_size());
+         $person = $book->person(0);
+         var_dump($person->name());
+         $person = $book->person(1);
+         var_dump($person->name());        
+         </xmp>
                 </div>
                 </article>
                 
@@ -245,13 +240,13 @@ nginx可以根据url path进行分流，也可以根据cookie分流
                     <h3>New </h3>
                     <ol class='posts'>
                         
-                            <li><a href="post/PHP/pb4php.htm">Protobuf在PHP里应用备忘</a></li>
-                        
-                            <li><a href="post/Other/nginx根据cookie负载均衡.htm">nginx根据cookie负载均衡</a></li>
+                            <li><a href="post/Other/github_markdown.htm">用github+markdown搭建极简博客</a></li>
                         
                             <li><a href="post/HTML/用Table解决iframe自适应高度.htm">用Table解决iframe自适应高度</a></li>
                         
-                            <li><a href="post/Other/github_markdown.htm">用github+markdown搭建极简博客</a></li>
+                            <li><a href="post/PHP/pb4php.htm">Protobuf在PHP里应用备忘</a></li>
+                        
+                            <li><a href="post/Other/nginx根据cookie负载均衡.htm">nginx根据cookie负载均衡</a></li>
                         
                     </ol>
                 </section>
