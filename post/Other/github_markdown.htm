@@ -180,6 +180,14 @@ window.onload = function () {
 </div>    
 </div>
 <script _src="/res/strapdown.js"></script>
+<script>
+$.each($('xmp'),function(k,v){
+    var obj=$(v);
+    var md_body_str=$(v).text();
+    var html=marked.parser(marked.lexer(md_body_str));
+    obj.closest('div').html(html);
+});
+</script>
 <footer>
       <div class="container">
         <div class="row">
