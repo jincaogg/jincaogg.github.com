@@ -63,9 +63,9 @@ footer{
 
 
 </xmp>
-<script src="/res/strapdown.js"></script>
+<script _src="/res/strapdown.js"></script>
 <script>
-$.each($('xxmp'),function(k,v){
+$.each($('xmp'),function(k,v){
     var obj=$(v);
     var md_body_str=$(v).text();
     var html=marked.parser(marked.lexer(md_body_str));
