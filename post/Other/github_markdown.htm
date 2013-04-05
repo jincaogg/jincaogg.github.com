@@ -67,7 +67,6 @@ footer{
     </div>
   </div>
 </div>
-<div class='container'>
 <xmp theme="united" style="display:none;">
 
 ###背景
@@ -120,7 +119,6 @@ footer{
 
 
 </xmp>
-</div>
 <div class='container'>
 <div>
 <style>
@@ -178,9 +176,10 @@ window.onload = function () {
 </script>
 </div>    
 </div>
-<script _src="/res/strapdown.js"></script>
+<script src="/res/strapdown.js"></script>
 <script>
-$.each($('xmp'),function(k,v){
+//使用marked直接转码没有做色
+$.each($('xxmp'),function(k,v){
     var obj=$(v);
     var md_body_str=$(v).text();
     var html=marked.parser(marked.lexer(md_body_str));
