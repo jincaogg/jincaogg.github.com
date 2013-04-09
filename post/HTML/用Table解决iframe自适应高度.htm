@@ -300,7 +300,7 @@ window.onload = function () {
 <script src="/res/js/bootstrap.min.js"></script>
 <script>
 //使用marked直接转码没有做色
-$.each($('xmp'),function(k,v){
+$.each($('xxmp'),function(k,v){
     var obj=$(v);
     var md_body_str=$(v).text();
     var html=marked.parser(marked.lexer(md_body_str));
