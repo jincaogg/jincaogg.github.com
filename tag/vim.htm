@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html dir="ltr" lang="zh-CN">
 <head>
-<title>首页</title>
+<title>Tag：vim</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="description" content="">
@@ -54,159 +54,23 @@ footer{
 
 
 
+
 <xmp theme='united' style='display:none;'>
 </xmp>
 <div class='main'>
     <div class='container'>
         <div class='row'>
              <div class='span9'>
+                <h3>vim</h3>
                 
-                <article>
-                 <small>2012-10-17 12:25</small>
-                 <h1><a href="post/Other/VIM彩色设置.htm">VIM 彩色设置备忘</a></h1>
-                 <div class='md_div'>
-                 <div>
-                  <xmp class='uneditable md_body' style='display:block'>
-                    
-
-
-- VIM设置
-
-		
-	
-		syntax on
-	
-		colorscheme desert  
-	
-		
-	
-	
-- Linux设置
-		
-	
-		export TERM=linux</xmp>
-                 </div>
-                 <div><br/><a href="post/Other/VIM彩色设置.htm" >Read More ...</a></div>
-                 </div>
-                </article>
-                
-                <article>
-                 <small>2013-03-31 11:30</small>
-                 <h1><a href="post/Other/github_markdown.htm">用github+markdown搭建极简博客</a></h1>
-                 <div class='md_div'>
-                 <div>
-                  <xmp class='uneditable md_body' style='display:block'>
-                    
-###背景
-
-以前的Blog采用了WordPress放到虚拟主机上，很久时间没管，记起了上去才发现服务器都关了，数据全都没有备份。
-
-后续接触了MarkDown，非常喜欢这种简洁易表达的文本输写格式，遂采用 `scriptogr.am` 的服务搭建了一个blog，然后一下就喜欢上了这种直接用文本编辑器写Blog，放到本地目录的方式。
-
-但发现 sciptogr.am 的功能定制化不够。其后一直在找一种比较简单并更加可控的静态Blog的搭建方式，其间找到jekyll等静态生成器，但安装和使用都太复杂，常常依赖一大堆的库。
-
-于是就自己用Python简单写了从MarkDown生成静态Blog的脚本，总共300行代码。其中还包含实现了一个简单到简陋的模板，
-
-你现在所看到这个就是通过这个脚本生成的了。
-
-###特点
- 
- 1. 采用基于marked.js,showdown.js用来解析Markdown，
- 
- 2. 采用了Disqus作为评论系统，
- 
- 3. 采用了bootstrap做为页面的CSS框架并采用bootswatch的主题
- 
- 4. 只使用python的基础库，没有依赖其他库，有Python环境就能运行
- 
- 5. 代码很简单，可以很方便的定制
- 
- 
-###文件目录:
-
-    - bin 脚本存放目录
-    
-    - content md文档存放目录，可以直接放到dropbox上
-        -page pages存放
-        -post posts存放
-        
-    - public 公共访问的目录，这个目录就是需要同步到你的网站根目录
-    
-    - template 模板存放
-
-###使用：
-    
-    1. >git clone https://github.com/jincaogg/mdblog.git 
-    
-    2. 将md文档拷贝到content 下的page或者post目录下
-    
-    3. >bin/blog.py
-    
-    4. 将public目录下的所有内容同步到 github 或者其他可访问的目录
-    
-
-</xmp>
-                 </div>
-                 <div><br/><a href="post/Other/github_markdown.htm" >Read More ...</a></div>
-                 </div>
-                </article>
-                
-                <article>
-                 <small>2013-03-05 12:03</small>
-                 <h1><a href="post/HTML/用Table解决iframe自适应高度.htm">用Table解决iframe自适应高度</a></h1>
-                 <div class='md_div'>
-                 <div>
-                  <xmp class='uneditable md_body' style='display:block'>
-                    
-主页面代码：
-
-	<!DOCTYPE html>
-	<html> 
-	<head> 
-	<title>iframe自适应</title> 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-	<style type="text/css">   
-	html,body{ width:100%; height:100%;overflow:hidden}   
-	body {    
-        margin: 0;   
-      	padding:0;
-	}   
-	</style> 
-	</head> 
-	<body> 
-	<!--table设置高度为100%，宽度为100%--> 
-	<table border="0" style="width:100%; height:100%;" cellspacing="0" 	cellpadding="0"> 
-    <tr> 
-        <td style="width:100%; height:100%;"> 
-            <!--iframe高度设置为100％，宽度设置为100％--> 
-            <iframe src="test.html"  style="width:100%; height:100%;overflow-x:hidden" frameborder="no" scrolling="scroll"></iframe> 
-        </td> 
-   	 </tr> 
-	</table> 
-	</body> 
-	</html> 
-
-
-内页test.html代码：
-
-	<!DOCTYPE html>
-    <html> 
-    <head> 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-    <title>测试页面</title> 
-    <style>
-        html,body{margin: 0;padding:0; overflow-x:hidden}
-    </style>
-    </head> 
-    <body> 
-    </xmp>
-                 </div>
-                 <div><br/><a href="post/HTML/用Table解决iframe自适应高度.htm" >Read More ...</a></div>
-                 </div>
-                </article>
+                    <div class='row'>
+                        <div class='span7'><a href="/post/Other/VIM彩色设置.htm">VIM 彩色设置备忘</a></div>
+                        <div class='span2'><small>2012-10-17 12:25</small></div>
+                    </div>
+                    <hr></hr>
                 
              </div>
-            <div class='span3'>
+             <div class='span3'>
 <aside class='aside'>
          <div class='well'>
                 <section>  
@@ -298,28 +162,6 @@ footer{
      
     
 </div>
-<script type='text/javascript'>
-marked.setOptions({
-	gfm: true,
-	tables: true,
-	breaks: false,
-	pedantic: false,
-	sanitize: false,
-	smartLists: false,
-	silent: false,
-    codeClassPrefix:'prettyprint',
-	highlight: null,
-	langPrefix: 'lang-'   
-    
-});
-$.each($('article .md_body'), function(k, v) {
-    var obj=$(v);
-    var md_body_str=$(v).text();
-    var html=marked.parser(marked.lexer(md_body_str));
-    obj.closest('div').html(html);
-});
-</script>
-
 <script src="/res/strapdown.js"></script>
 <script src="/res/js/bootstrap.min.js"></script>
 <script>
