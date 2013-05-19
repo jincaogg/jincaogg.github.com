@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html dir="ltr" lang="zh-CN">
 <head>
-<title>用github+markdown搭建极简博客</title>
+<title>Protobuf在PHP里应用备忘</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="description" content="">
@@ -60,8 +60,8 @@ footer{
 <div class='container'>
   <div class='row'>
     <div class='span12'>
-        <h2>用github+markdown搭建极简博客</h2>
-        <small>2013-03-31 11:30</small>
+        <h2>Protobuf在PHP里应用备忘</h2>
+        <small>2012-11-28 11:25</small>
         <hr/>
         <div class="span2 toc-container">
          <div data-spy="affix" data-offset-top="185" style="width:140px;" class="toc"></div>
@@ -71,54 +71,58 @@ footer{
 </div>
 <xmp theme="united" style="display:none;">
 
-###背景
 
-以前的Blog采用了WordPress放到虚拟主机上，很久时间没管，记起了上去才发现服务器都关了，数据全都没有备份。
-
-后续接触了MarkDown，非常喜欢这种简洁易表达的文本输写格式，遂采用 `scriptogr.am` 的服务搭建了一个blog，然后一下就喜欢上了这种直接用文本编辑器写Blog，放到本地目录的方式。
-
-但发现 sciptogr.am 的功能定制化不够。其后一直在找一种比较简单并更加可控的静态Blog的搭建方式，其间找到jekyll等静态生成器，但安装和使用都太复杂，常常依赖一大堆的库。
-
-于是就自己用Python简单写了从MarkDown生成静态Blog的脚本，总共300行代码。其中还包含实现了一个简单到简陋的模板，
-
-你现在所看到这个就是通过这个脚本生成的了。
-
-###特点
+##引用包Protocolbuf
+  
+  1. 下载包[pb4php](http://code.google.com/p/pb4php/)
+  
+  2. 根据proto文件生成PHP的代码文件 `test.proto` > `pb_proto_test.php` 
+                     
+         <?php
+         require_once('../parser/pb_parser.php');
+         $test = new PBParser();
+         $test->parse('./test.proto');
+         //---
+         
  
- 1. 采用基于marked.js,showdown.js用来解析Markdown，
- 
- 2. 采用了Disqus作为评论系统，
- 
- 3. 采用了bootstrap做为页面的CSS框架并采用bootswatch的主题
- 
- 4. 只使用python的基础库，没有依赖其他库，有Python环境就能运行
- 
- 5. 代码很简单，可以很方便的定制
- 
- 
-###文件目录:
+  3. 引用刚生成的代码文件，解析，存储PB格式数据
+         
+         <?php         
+         require_once('../message/pb_message.php');
+         // now read it with the old file
+         // include the generated file
+         require_once('./pb_proto_test.php');    
+         $string = file_get_contents('./test.pb');
+         // Just read it
+         $book = new AddressBook();
+         $book->parseFromString($string);
+         var_dump($book->person_size());
+         $person = $book->person(0);
+         var_dump($person->name());
+         $person = $book->person(1);
+         var_dump($person->name());        
+         //-------------------    
+         $book = new AddressBook();
+         $person = $book->add_person();
+         $person->set_name('Nikolai');
+         $person = $book->add_person();
+         $person->set_name('Kordulla');
+         $person->set_surname('MySurname');
+         $phone_number = $person->add_phone();
+         $phone_number->set_number('0711');
+         $phone_number->set_type(Person_PhoneType::WORK);
+         $phone_number = $person->add_phone();
+         $phone_number->set_number('0171');
+         $phone_number->set_type(Person_PhoneType::MOBILE);
+         $phone_number = $person->add_phone();
+         $phone_number->set_number('030');        
+         // serialize
+         $string = $book->SerializeToString();
 
-    - bin 脚本存放目录
-    
-    - content md文档存放目录，可以直接放到dropbox上
-        -page pages存放
-        -post posts存放
-        
-    - public 公共访问的目录，这个目录就是需要同步到你的网站根目录
-    
-    - template 模板存放
-
-###使用：
-    
-    1. >git clone https://github.com/jincaogg/mdblog.git 
-    
-    2. 将md文档拷贝到content 下的page或者post目录下
-    
-    3. >bin/blog.py
-    
-    4. 将public目录下的所有内容同步到 github 或者其他可访问的目录
+                   
     
 
+  
 
 </xmp>
 <div class='container'>
