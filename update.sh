@@ -1,3 +1,5 @@
+../blog/bin/blog.py
+
 git rm *.htm
 git rm -r page
 git rm -r post
