@@ -90,30 +90,6 @@ footer{
                 
                 <article>
                  <small>2012-11-28 11:25</small>
-                 <h1><a href="post/LAMP/Discuz 的简单 登录判断插件.htm">Discuz 的简单登录判断插件</a></h1>
-                 <div class='md_div'>
-                 <div>
-                  <xmp class='uneditable md_body' style='display:block'>
-                    
-
-##背景
-
-##登录入口分析
-
-
-
-                   
-    
-
-  
-</xmp>
-                 </div>
-                 <div><br/><a href="post/LAMP/Discuz 的简单 登录判断插件.htm" >Read More ...</a></div>
-                 </div>
-                </article>
-                
-                <article>
-                 <small>2012-11-28 11:25</small>
                  <h1><a href="post/LAMP/pb4php.htm">Protobuf在PHP里应用备忘</a></h1>
                  <div class='md_div'>
                  <div>
@@ -132,6 +108,36 @@ footer{
     </xmp>
                  </div>
                  <div><br/><a href="post/LAMP/pb4php.htm" >Read More ...</a></div>
+                 </div>
+                </article>
+                
+                <article>
+                 <small>2012-12-17 11:25</small>
+                 <h1><a href="post/LAMP/nginx根据cookie负载均衡.htm">nginx根据cookie负载均衡</a></h1>
+                 <div class='md_div'>
+                 <div>
+                  <xmp class='uneditable md_body' style='display:block'>
+                    
+nginx可以根据url path进行分流，也可以根据cookie分流
+ 
+两台服务器分别定义为
+
+	apache001：192.168.1.1:8080
+	apache002：192.168.1.2:8080
+ 
+默认服务器为：
+
+	default：192.168.1.0:8080
+ 
+前端nginx服务器监听端口8080，需要根据cookie转发，查询的cookie的键（key）为uid，如果该cookie值（value）以1结尾则转发到apache001，以2结尾则转发到apache002。
+ 
+- 方案1：
+
+   用map，nginx.conf配置如下：
+ 
+		map $COOK</xmp>
+                 </div>
+                 <div><br/><a href="post/LAMP/nginx根据cookie负载均衡.htm" >Read More ...</a></div>
                  </div>
                 </article>
                 
@@ -163,7 +169,7 @@ footer{
                     
                       <li><a href="/cat/HTML.htm">HTML [1]</a></li>
                     
-                      <li><a href="/cat/LAMP.htm">LAMP [3]</a></li>
+                      <li><a href="/cat/LAMP.htm">LAMP [2]</a></li>
                     
                       <li><a href="/cat/Other.htm">Other [2]</a></li>
                     
@@ -176,11 +182,7 @@ footer{
                     <h3>Tags</h3>
                     <ol class='posts'>
                     
-                      <li><a href="/tag/php.htm">php [2]</a></li>
-                    
                       <li><a href="/tag/apache.htm">apache [1]</a></li>
-                    
-                      <li><a href="/tag/discuz.htm">discuz [1]</a></li>
                     
                       <li><a href="/tag/email.htm">email [1]</a></li>
                     
@@ -193,6 +195,8 @@ footer{
                       <li><a href="/tag/nginx.htm">nginx [1]</a></li>
                     
                       <li><a href="/tag/pb.htm">pb [1]</a></li>
+                    
+                      <li><a href="/tag/php.htm">php [1]</a></li>
                     
                       <li><a href="/tag/python.htm">python [1]</a></li>
                     
@@ -208,8 +212,6 @@ footer{
                     <ol class='posts'>
                         
                             <li><a href="/post/Other/How to write a goot mail.htm">如何写好工作邮件</a></li>
-                        
-                            <li><a href="/post/LAMP/Discuz 的简单 登录判断插件.htm">Discuz 的简单登录判断插件</a></li>
                         
                             <li><a href="/post/LAMP/pb4php.htm">Protobuf在PHP里应用备忘</a></li>
                         
