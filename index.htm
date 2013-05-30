@@ -89,6 +89,36 @@ footer{
                 </article>
                 
                 <article>
+                 <small>2012-03-30 11:30</small>
+                 <h1><a href="post/Other/vim彩色设置备忘.htm">Vim彩色设置备忘</a></h1>
+                 <div class='md_div'>
+                 <div>
+                  <xmp class='uneditable md_body' style='display:block'>
+                    
+- VIM设置
+
+	> 修改 `.vimrc`
+	
+		syntax on
+	
+		colorscheme desert  
+	
+		
+	
+	
+- Linux设置
+		
+	> 修改 `.bashrc`
+	
+		export TERM=linux
+		
+</xmp>
+                 </div>
+                 <div><br/><a href="post/Other/vim彩色设置备忘.htm" >Read More ...</a></div>
+                 </div>
+                </article>
+                
+                <article>
                  <small>2012-11-28 11:25</small>
                  <h1><a href="post/LAMP/pb4php.htm">Protobuf在PHP里应用备忘</a></h1>
                  <div class='md_div'>
@@ -108,36 +138,6 @@ footer{
     </xmp>
                  </div>
                  <div><br/><a href="post/LAMP/pb4php.htm" >Read More ...</a></div>
-                 </div>
-                </article>
-                
-                <article>
-                 <small>2012-12-17 11:25</small>
-                 <h1><a href="post/LAMP/nginx根据cookie负载均衡.htm">nginx根据cookie负载均衡</a></h1>
-                 <div class='md_div'>
-                 <div>
-                  <xmp class='uneditable md_body' style='display:block'>
-                    
-nginx可以根据url path进行分流，也可以根据cookie分流
- 
-两台服务器分别定义为
-
-	apache001：192.168.1.1:8080
-	apache002：192.168.1.2:8080
- 
-默认服务器为：
-
-	default：192.168.1.0:8080
- 
-前端nginx服务器监听端口8080，需要根据cookie转发，查询的cookie的键（key）为uid，如果该cookie值（value）以1结尾则转发到apache001，以2结尾则转发到apache002。
- 
-- 方案1：
-
-   用map，nginx.conf配置如下：
- 
-		map $COOK</xmp>
-                 </div>
-                 <div><br/><a href="post/LAMP/nginx根据cookie负载均衡.htm" >Read More ...</a></div>
                  </div>
                 </article>
                 
@@ -171,7 +171,7 @@ nginx可以根据url path进行分流，也可以根据cookie分流
                     
                       <li><a href="/cat/LAMP.htm">LAMP [2]</a></li>
                     
-                      <li><a href="/cat/Other.htm">Other [2]</a></li>
+                      <li><a href="/cat/Other.htm">Other [3]</a></li>
                     
                     </ol>
 
@@ -200,6 +200,8 @@ nginx可以根据url path进行分流，也可以根据cookie分流
                     
                       <li><a href="/tag/python.htm">python [1]</a></li>
                     
+                      <li><a href="/tag/vim.htm">vim [1]</a></li>
+                    
                     </ol>
 
                 </section>
@@ -212,6 +214,8 @@ nginx可以根据url path进行分流，也可以根据cookie分流
                     <ol class='posts'>
                         
                             <li><a href="/post/Other/How to write a goot mail.htm">如何写好工作邮件</a></li>
+                        
+                            <li><a href="/post/Other/vim彩色设置备忘.htm">Vim彩色设置备忘</a></li>
                         
                             <li><a href="/post/LAMP/pb4php.htm">Protobuf在PHP里应用备忘</a></li>
                         
