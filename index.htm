@@ -64,6 +64,67 @@ footer{
              <div class='span9'>
                 
                 <article>
+                 <small>2012-03-30 11:30</small>
+                 <h1><a href="post/Other/内部API接口文档.htm">内部API接口文档</a></h1>
+                 <div class='md_div'>
+                 <div>
+                  <xmp class='uneditable md_body' style='display:block'>
+                    
+内部API接口文档
+===========================
+文档版本：
+
+    * 建议用Firefox，chrome及IE9以上查看此文档
+    
+
+
+环境布署：
+
+
+
+安全控制：
+
+    请告知调用接口的内网IP，广点通添加访问授权；
+    请应用侧对调用接口做各操作的频次限制；
+    并提供每秒峰值和每日总请求数。
+
+备注：
+
+    1. 下面接口描述中的返回的JSON数据为了可读性而增加了空格换行等符号，实际输出中不含任何多余的空白字符。
+    2. 返回的JSON数据中的中文不会被转换成“\uxxxx”这种形式</xmp>
+                 </div>
+                 <div><br/><a href="post/Other/内部API接口文档.htm" >Read More ...</a></div>
+                 </div>
+                </article>
+                
+                <article>
+                 <small>2012-03-30 11:30</small>
+                 <h1><a href="post/Other/通用投放系统PHP接口文档.htm">通用投放端接口文档</a></h1>
+                 <div class='md_div'>
+                 <div>
+                  <xmp class='uneditable md_body' style='display:block'>
+                    
+#通用投放端接口文档
+
+环境部署：
+
+   
+
+总体说明：
+
+    此接口可以供前台页面直接调用，除非有特别说明的接口，所有接口调用都需要带QQ的社区登录态。
+    有几种常见的错误需要前台页面引导用户进行处理：
+    1.未登录。（提示用户，在按确定后跳转至登录页面）（返回码4501）
+    2.没有权限。（提示用户）（返回码4511）
+    3.非法的请求。（防CSRF的Token验证失败，极有可能是用户受到CSRF攻击，怎么提示用户？@todo）（返回码4512）
+    4.参数错误。（会有具体提示哪一个参数错误，提示用户）（返回码4003）
+ </xmp>
+                 </div>
+                 <div><br/><a href="post/Other/通用投放系统PHP接口文档.htm" >Read More ...</a></div>
+                 </div>
+                </article>
+                
+                <article>
                  <small>2013-03-31 11:30</small>
                  <h1><a href="post/Other/How to write a goot mail.htm">如何写好工作邮件</a></h1>
                  <div class='md_div'>
@@ -85,59 +146,6 @@ footer{
 在回复任何邮件之前，请想</xmp>
                  </div>
                  <div><br/><a href="post/Other/How to write a goot mail.htm" >Read More ...</a></div>
-                 </div>
-                </article>
-                
-                <article>
-                 <small>2012-03-30 11:30</small>
-                 <h1><a href="post/Other/vim彩色设置备忘.htm">Vim彩色设置备忘</a></h1>
-                 <div class='md_div'>
-                 <div>
-                  <xmp class='uneditable md_body' style='display:block'>
-                    
-- VIM设置
-
-	> 修改 `.vimrc`
-	
-		syntax on
-	
-		colorscheme desert  
-	
-		
-	
-	
-- Linux设置
-		
-	> 修改 `.bashrc`
-	
-		export TERM=linux
-		
-</xmp>
-                 </div>
-                 <div><br/><a href="post/Other/vim彩色设置备忘.htm" >Read More ...</a></div>
-                 </div>
-                </article>
-                
-                <article>
-                 <small>2012-11-28 11:25</small>
-                 <h1><a href="post/LAMP/pb4php.htm">Protobuf在PHP里应用备忘</a></h1>
-                 <div class='md_div'>
-                 <div>
-                  <xmp class='uneditable md_body' style='display:block'>
-                    
-##引用包Protocolbuf
-  
-  1. 下载包[pb4php](http://code.google.com/p/pb4php/)
-  
-  2. 根据proto文件生成PHP的代码文件 `test.proto` > `pb_proto_test.php` 
-                     
-         <?php
-         require_once('../parser/pb_parser.php');
-         $test = new PBParser();
-         $test->parse('./test.proto');
-    </xmp>
-                 </div>
-                 <div><br/><a href="post/LAMP/pb4php.htm" >Read More ...</a></div>
                  </div>
                 </article>
                 
@@ -171,7 +179,7 @@ footer{
                     
                       <li><a href="/cat/LAMP.htm">LAMP [2]</a></li>
                     
-                      <li><a href="/cat/Other.htm">Other [3]</a></li>
+                      <li><a href="/cat/Other.htm">Other [5]</a></li>
                     
                     </ol>
 
@@ -181,6 +189,8 @@ footer{
                 <section>
                     <h3>Tags</h3>
                     <ol class='posts'>
+                    
+                      <li><a href="/tag/api.htm">api [2]</a></li>
                     
                       <li><a href="/tag/apache.htm">apache [1]</a></li>
                     
@@ -212,6 +222,10 @@ footer{
                 <section>
                     <h3>New </h3>
                     <ol class='posts'>
+                        
+                            <li><a href="/post/Other/内部API接口文档.htm">内部API接口文档</a></li>
+                        
+                            <li><a href="/post/Other/通用投放系统PHP接口文档.htm">通用投放端接口文档</a></li>
                         
                             <li><a href="/post/Other/How to write a goot mail.htm">如何写好工作邮件</a></li>
                         
