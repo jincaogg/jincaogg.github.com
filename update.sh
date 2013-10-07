@@ -7,7 +7,6 @@ rm -r ../blog/public/*
 
 ../blog/bin/blog.py
 cp -R ../blog/public/* ./
-
 git add .
 git commit -m 'update'
 git push
